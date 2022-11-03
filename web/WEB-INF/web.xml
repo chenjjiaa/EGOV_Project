@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <!-- 欢迎界面 -->
+    <welcome-file-list>
+        <welcome-file>login.jsp</welcome-file>
+    </welcome-file-list>
+
+    <!-- 过滤器 -->
+    <filter>
+        <filter-name>LoginFilter</filter-name>
+        <filter-class>com.gg.egov.filter.LoginFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>LoginFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+        <url-pattern>*.jsp</url-pattern>
+    </filter-mapping>
+
+
+    <!-- 新增系统用户 -->
+    <servlet>
+        <servlet-name>InsertUserServlet</servlet-name>
+        <servlet-class>com.gg.egov.controller.user_and_system.InsertUserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>InsertUserServlet</servlet-name>
+        <url-pattern>/servlet/InsertUser</url-pattern><!-- 这个是别名，要加斜杠 -->
+    </servlet-mapping>
+
+
+    <!-- 分页查询用户 -->
+    <servlet>
+        <servlet-name>PageQueryUserServlet</servlet-name>
+        <servlet-class>com.gg.egov.controller.user_and_system.PageQueryUserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PageQueryUserServlet</servlet-name>
+        <url-pattern>/servlet/PageQueryUser</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- 按usercode查询用户 -->
+    <servlet>
+        <servlet-name>SelectUserServlet</servlet-name>
+        <servlet-class>com.gg.egov.controller.user_and_system.SelectUserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SelectUserServlet</servlet-name>
+        <url-pattern>/servlet/GoUpdateUser</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- 更新用户信息 -->
+    <servlet>
+        <servlet-name>UpdateUserServlet</servlet-name>
+        <servlet-class>com.gg.egov.controller.user_and_system.UpdateUserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateUserServlet</servlet-name>
+        <url-pattern>/servlet/UpdateUser</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- 删除用户信息 -->
+    <servlet>
+        <servlet-name>DeleteUserServlet</servlet-name>
+        <servlet-class>com.gg.egov.controller.user_and_system.DeleteUserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteUserServlet</servlet-name>
+        <url-pattern>/servlet/DeleteUser</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- 登录系统 -->
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.gg.egov.controller.user_and_system.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/servlet/login</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- 退出系统 -->
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>com.gg.egov.controller.user_and_system.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/servlet/logout</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- 添加投资人 -->
+    <servlet>
+        <servlet-name>AddInvestorServlet</servlet-name>
+        <servlet-class>com.gg.egov.controller.investor.AddInvestorServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddInvestorServlet</servlet-name>
+        <url-pattern>/servlet/AddInvestor</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- 分页查询投资人信息 -->
+    <servlet>
+        <servlet-name>PageQueryInvestorServlet</servlet-name>
+        <servlet-class>com.gg.egov.controller.investor.PageQueryInvestorServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PageQueryInvestorServlet</servlet-name>
+        <url-pattern>/servlet/PageQueryInvestor</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- 展示投资人详情 -->
+    <servlet>
+        <servlet-name>ShowInfomationServlet</servlet-name>
+        <servlet-class>com.gg.egov.controller.investor.ShowInfomationServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ShowInfomationServlet</servlet-name>
+        <url-pattern>/servlet/showInfomation</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- 验证组织机构代码是否存在 -->
+    <servlet>
+        <servlet-name>VerificationExistServlet</servlet-name>
+        <servlet-class>com.gg.egov.controller.enterprise.VerificationExistServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VerificationExistServlet</servlet-name>
+        <url-pattern>/servlet/verificationExist</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- 保存投资人和企业的关系 -->
+    <servlet>
+        <servlet-name>SaveInvAndEnServlet</servlet-name>
+        <servlet-class>com.gg.egov.controller.inv_and_en.SaveInvAndEnServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SaveInvAndEnServlet</servlet-name>
+        <url-pattern>/servlet/saveInvAndEn</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- 分页查询企业信息 -->
+    <servlet>
+        <servlet-name>PageQueryEnterpriseServlet</servlet-name>
+        <servlet-class>com.gg.egov.controller.enterprise.PageQueryEnterpriseServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PageQueryEnterpriseServlet</servlet-name>
+        <url-pattern>/servlet/pageQueryEnterprise</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- 展示企业详细信息 -->
+    <servlet>
+        <servlet-name>ShowEnterpriseMsgServlet</servlet-name>
+        <servlet-class>com.gg.egov.controller.auth.ShowEnterpriseMsgServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ShowEnterpriseMsgServlet</servlet-name>
+        <url-pattern>/servlet/showEnterpriseMsg</url-pattern>
+    </servlet-mapping>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</web-app>
