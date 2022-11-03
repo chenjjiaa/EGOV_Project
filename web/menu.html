@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+  <title>国家外汇管理局直接投资外汇业务信息系统</title>
+  <link href="style/left.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="js/newmenu.js"></script>
+</head>
+<body>
+<SCRIPT language=Javascript>
+<!--
+function onChange(i){ // i = 1
+    childSort=document.all("child" + i); // child1
+    obj_image=document.all("image" + i); // image1
+	if(childSort.style.display=="none"){
+		childSort.style.display="";
+		obj_image.src=img2.src;
+		//obj.innerHTML="<img src='images/d_left_2.gif' width='16' height='14' border='0'>";
+		}
+	else{
+        //theTd.bgcolor="#000000";
+		childSort.style.display="none";
+		obj_image.src=img1.src;
+		//obj.innerHTML="<img src='images/d_left_1.gif' width='16' height='14' border='0'>";
+		}
+}
+
+function onMainChange(a){ // a = 'A'
+    childSort = document.all("child" + a); // childA
+    obj_image = document.all("image" + a); // imageA
+    if (childSort.style.display == "none"){
+        childSort.style.display = "";
+        if(obj_image != null)
+          obj_image.src = img2.src;
+    }
+    else{
+        childSort.style.display = "none";
+        if(obj_image != null)
+          obj_image.src = img1.src;
+    }
+}
+//-->
+</SCRIPT>
+<!--境外管理结束-->
+<table width="189" height="30" border="0" cellpadding="0" cellspacing="0" style="background-image:url(images/menu_main_bg2.gif);">
+  <tr>
+    <td width="25" height="25" align="center"><A href="javascript:onMainChange('A')" ><!--<img id=imageA  src="images/d_left_1.gif" width="16" height="14" border="0">--></A></td>
+    <td height="25" colspan="3"><A href="javascript:void(0)" style="cursor:hand" onClick="onMainChange('A')"><lable><strong>境内业务管理</strong></lable></A></td>
+  </tr>
+</table>
+<span id=childA  style="display:none">
+	<table width="189" height="30" border="0" cellpadding="0" cellspacing="0" style="background-image:url(images/menu_main_bg.gif);">
+	  <tr>
+	    <td width="25" height="25" align="center"><A href="javascript:onChange(1)" ><img id=image1  src="images/d_left_1.gif" width="16" height="14" border="0"></A></td>
+	    <td height="25" colspan="3"><A href="javascript:void(0)" style="cursor:hand" onClick="onChange(1)"><strong>登记管理</strong></A></td>
+	  </tr>
+	</table>
+	
+	<SPAN id=child1 style="DISPLAY: none">
+		<table width="189" height="30" border="0" cellpadding="0" cellspacing="0">
+		  <tr>
+		    <td width="20" height="25">　</td>
+		    <td width="25" height="25" align="center"><A href="javascript:onChange(11)" ><img id=image11  src="images/d_left_1.gif" width="16" height="14" border="0"></A></td>
+		    <td height="25" colspan="3"><A href="javascript:void(0)" style="cursor:hand" onClick="onChange(11)"><strong>基本信息登记</strong></A></td>
+		  </tr>
+		</table>
+		
+		<SPAN id=child11 style="DISPLAY: none">
+			<table width="189" border="0" cellpadding="0" cellspacing="0" >
+			  <tr>
+			    <td width="20" height="25">　</td>
+			    <td width="20" height="25">　</td>
+			    <td width="20" height="25" align="center"><A href="javascript:onChange(1110)" ><img id=image1110  src="images/d_left_1.gif" width="16" height="14" border="0"></A></td>
+			    <td height="25"><A  href="javascript:void(0)" style="cursor:hand" onClick="onChange(1110)"><strong>企业投资人信息登记</strong></A></td>
+			  </tr>
+			</table>
+			
+			<SPAN id=child1110 style="DISPLAY: none">
+			<table width="189" border="0" cellpadding="0" cellspacing="0" >
+			  <tr>
+			    <td width="20" height="25">　</td>
+			    <td width="20" height="25">　</td>
+			    <td width="20" height="25">　</td>
+			    <td width="20" height="25" align="center"><img src="images/menu_dot3.gif" width="8" height="8"></td>
+			    <td height="25"><a href="basicinfo/exoticOrgList.jsp" target="I2">录入</a></td>
+			  </tr>
+			</table>
+		    </SPAN>
+		</SPAN>
+	
+	</SPAN>
+
+</span>
+
+</body>
+</html>
